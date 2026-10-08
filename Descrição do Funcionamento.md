@@ -1,10 +1,16 @@
 Descrição do Funcionamento
 O código implementa o estado legado do sistema de almoxarifado
 Arquitetura Monolítica e Interface Terminal: O sistema roda em um único arquivo via menu interativo no terminal. Os dados dos materiais são armazenados em uma estrutura de lista de dicionários em memória durante a execução.
-Operações de CRUD de Materiais:
-- Cadastrar (Create): Permite inserir novos insumos definindo nome e quantidade inicial, gerando um ID incremental automático.
-- Listar (Read): Exibe no terminal todos os materiais cadastrados com seus respectivos IDs e saldos.
-- Atualizar (Update): Permite alterar o nome ou a quantidade de um material selecionado pelo ID.
-- Excluir (Delete): Remove o registro do material do sistema a partir do seu ID.
-Ausência de Controle de Estoque: A função registrar_retirada realiza a subtração direta da quantidade solicitada do saldo do produto sem efetuar qualquer validação de disponibilidade. Isso permite que a retirada ocorra mesmo que seja maior do que o saldo em estoque, podendo resultar em quantidades negativas e gerando divergências no controle de insumos.
-Ausência de Controle de Acesso e Rastreabilidade: Qualquer usuário do terminal possui acesso irrestrito a todas as funções de consulta, alteração e exclusão. Não há autenticação, separação de perfis (Administrador vs. Operador) nem registro de data/hora ou de responsável pela operação.
+O Sistema agora conta com:
+- Tela splash 
+- Tela de Login
+Operações de Login:
+- Validação de usuario
+- Funções separadas por nivel de herarquia de poder de login
+- Nome de Usuario repassado a outras tela para melhor UX
+Operações de CRUD MENU:
+- Cadastrar: Permite inserir novos insumos definindo nome e quantidade inicial, gerando um ID incremental automático.
+- Listar: Exibe no terminal todos os materiais cadastrados com seus respectivos IDs e saldos.
+- Atualizar: Permite alterar o nome ou a quantidade de um material selecionado pelo ID.
+- Excluir: Remove o registro do material do sistema a partir do seu ID.
+Ausência de registro de data/hora ou de responsável pela operação.
